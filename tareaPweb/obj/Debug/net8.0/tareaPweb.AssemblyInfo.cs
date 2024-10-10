@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tareaPweb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8b10d22deb158397d7db71418766a487b920025")]
 [assembly: System.Reflection.AssemblyProductAttribute("tareaPweb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tareaPweb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
