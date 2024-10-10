@@ -1,0 +1,70 @@
+@page "/personajes"
+@using tareaPweb.models
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<h3>Lista de Personajes</h3>
+
+<button class="btn btn-success mb-3" @onclick="AgregarPersonaje">Agregar Personaje</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Alias</th>
+            <th>Rol</th>
+            <th>Nivel de Poder</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personaje in listaPersonajes)
+        {
+            <tr>
+                <td>@personaje.Nombre</td>
+                <td>@personaje.Alias</td>
+                <td>@personaje.Rol</td>
+                <td>@personaje.NivelPoder</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" @onclick="() => EditarPersonaje(personaje)">Editar</button>
+                    <button class="btn btn-info btn-sm" @onclick="() => VerDetalles(personaje)">Detalles</button>
+                    <button class="btn btn-danger btn-sm" @onclick="() => EliminarPersonaje(personaje)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    // Lista de personajes (ejemplo de datos)
+    private List<Personaje> listaPersonajes = new List<Personaje>
+{
+new Personaje { Nombre = "Link", Alias = "", Rol = "Protagonista", HabilidadEspecial = "Maestro Espadachín",
+ArmaFavorita = "Espada Maestra", NivelPoder = 95, ImagenPersonaje = "https://url-ejemplo.com/link.jpg" },
+new Personaje { Nombre = "Ganondorf", Alias = "", Rol = "Villano", HabilidadEspecial = "Magia Oscura", ArmaFavorita =
+"Espada", NivelPoder = 98, ImagenPersonaje = "https://url-ejemplo.com/ganondorf.jpg" }
+};
+
+    private void AgregarPersonaje()
+    {
+        NavigationManager.NavigateTo("/personaje-form");
+    }
+
+    private void EditarPersonaje(Personaje personaje)
+    {
+        // Navegar a la página de edición
+        NavigationManager.NavigateTo($"/personaje-form/{personaje.Nombre}");
+    }
+
+    private void VerDetalles(Personaje personaje)
+    {
+        // Navegar a la página de detalles
+        NavigationManager.NavigateTo($"/personaje-detalles/{personaje.Nombre}");
+    }
+
+    private void EliminarPersonaje(Personaje personaje)
+    {
+        listaPersonajes.Remove(personaje);
+    }
+}

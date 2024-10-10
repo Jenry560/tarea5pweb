@@ -1,0 +1,76 @@
+@page "/videojuegos"
+@using System.ComponentModel.DataAnnotations
+@using tareaPweb.models
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<h3>Lista de Videojuegos</h3>
+
+<button class="btn btn-success mb-3" @onclick="AgregarVideojuego">Agregar Videojuego</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Desarrollador</th>
+            <th>Plataforma</th>
+            <th>Género</th>
+            <th>Fecha de Lanzamiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var videojuego in listaVideojuegos)
+        {
+            <tr>
+                <td>@videojuego.Nombre</td>
+                <td>@videojuego.Desarrollador</td>
+                <td>@videojuego.Plataforma.Nombre</td>
+                <td>@videojuego.Genero</td>
+                <td>@videojuego.FechaLanzamiento.ToShortDateString()</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" @onclick="() => EditarVideojuego(videojuego)">Editar</button>
+                    <button class="btn btn-info btn-sm" @onclick="() => VerDetalles(videojuego)">Detalles</button>
+                    <button class="btn btn-danger btn-sm" @onclick="() => EliminarVideojuego(videojuego)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@code {
+    // Lista de videojuegos (puedes llenarla con datos reales)
+    private List<VideoJuegos> listaVideojuegos = new List<VideoJuegos>
+{
+new VideoJuegos { Nombre = "The Legend of Zelda", Desarrollador = "Nintendo",
+Genero = "Aventura", FechaLanzamiento = new DateTime(2017, 3, 3), ImagenPortada =
+"https://url-de-ejemplo.com/zelda.jpg", Descripcion = "Un juego de aventura épico." },
+new VideoJuegos { Nombre = "Halo Infinite", Desarrollador = "343 Industries", Genero =
+"Acción", FechaLanzamiento = new DateTime(2021, 12, 8), ImagenPortada = "https://url-de-ejemplo.com/halo.jpg",
+Descripcion = "Un juego de disparos en primera persona." }
+};
+
+
+    private void AgregarVideojuego()
+    {
+        // Navega a la página de agregar videojuegosVideoJuegos
+        NavigationManager.NavigateTo("/videojuego-form");
+    }
+
+    private void EditarVideojuego(VideoJuegos videojuegosVideoJuegos)
+    {
+        // Navega a la página de edición con el videojuegosVideoJuegos seleccionado
+        NavigationManager.NavigateTo($"/videojuego-form/{videojuegosVideoJuegos.Nombre}");
+    }
+
+    private void VerDetalles(VideoJuegos videojuegosVideoJuegos)
+    {
+        // Navega a la página de detalles del videojuegosVideoJuegos
+        NavigationManager.NavigateTo($"/videojuegos-detalles/{videojuegosVideoJuegos.Nombre}");
+    }
+
+    private void EliminarVideojuego(VideoJuegos videojuego)
+    {
+        // Elimina el videojuego de la lista
+        listaVideojuegos.Remove(videojuego);
+    }
+}

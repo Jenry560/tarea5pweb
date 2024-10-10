@@ -1,0 +1,102 @@
+@page "/videojuego-form/{Id:int?}"
+
+@using System.ComponentModel.DataAnnotations
+@using tareaPweb.models
+@rendermode InteractiveServer
+
+
+<div class="form-container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Videojuego</h3>
+        </div>
+        <div class="card-body">
+
+            <EditForm Model="nuevoVideojuego" OnValidSubmit="Guardar">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <InputText id="nombre" class="form-control" @bind-Value="nuevoVideojuego.Nombre" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="desarrollador" class="form-label">Desarrollador</label>
+                    <InputText id="desarrollador" class="form-control" @bind-Value="nuevoVideojuego.Desarrollador" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="plataforma" class="form-label">Plataforma</label>
+                    <InputSelect id="plataforma" class="form-select" @bind-Value="nuevoVideojuego.Plataforma">
+                        <option value="">Selecciona una plataforma</option>
+                        @foreach (var plataforma in plataformas)
+                        {
+                            <option value="@plataforma">@plataforma</option>
+                        }
+                    </InputSelect>
+                </div>
+
+                <div class="mb-3">
+                    <label for="genero" class="form-label">Género</label>
+                    <InputText id="genero" class="form-control" @bind-Value="nuevoVideojuego.Genero" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="fechaLanzamiento" class="form-label">Fecha de Lanzamiento</label>
+                    <InputDate id="fechaLanzamiento" class="form-control"
+                        @bind-Value="nuevoVideojuego.FechaLanzamiento" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagenPortada" class="form-label">Imagen de Portada (URL)</label>
+                    <InputText id="imagenPortada" class="form-control" @bind-Value="nuevoVideojuego.ImagenPortada" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <InputTextArea id="descripcion" class="form-control" @bind-Value="nuevoVideojuego.Descripcion"
+                        rows="4" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar Videojuego</button>
+            </EditForm>
+
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public int? Id { get; set; }
+
+    private VideoJuegos nuevoVideojuego = new VideoJuegos();
+    private List<string> plataformas = new List<string> { "PC", "PlayStation", "Xbox", "Nintendo Switch" };
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        if (Id > 0)
+        {
+            @* var personajeExistente = await DbContext.Personajes.FindAsync(Id);
+if (personajeExistente == null)
+{
+Navigation.NavigateTo("/personajes");
+}
+else
+{
+personaje = personajeExistente;
+var seriePersonaje = await DbContext.Series.FindAsync(personaje.SerieId);
+personaje.Series = seriePersonaje ?? new Series();
+} *@
+        }
+
+    }
+
+    private void Guardar()
+    {
+        // Aquí puedes agregar la lógica para guardar el videojuego
+        Console.WriteLine("Videojuego guardado");
+    }
+}

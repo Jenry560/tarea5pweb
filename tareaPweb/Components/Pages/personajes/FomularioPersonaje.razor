@@ -1,0 +1,91 @@
+@page "/personaje-form/{Id:int?}"
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+@using tareaPweb.models
+
+<div class="form-container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Personaje</h3>
+        </div>
+        <div class="card-body">
+
+            <EditForm Model="nuevoPersonaje" OnValidSubmit="Guardar">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <InputText id="nombre" class="form-control" @bind-Value="nuevoPersonaje.Nombre" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="alias" class="form-label">Alias (Opcional)</label>
+                    <InputText id="alias" class="form-control" @bind-Value="nuevoPersonaje.Alias" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="rol" class="form-label">Rol en el juego</label>
+                    <InputText id="rol" class="form-control" @bind-Value="nuevoPersonaje.Rol" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="habilidadEspecial" class="form-label">Habilidad Especial (Opcional)</label>
+                    <InputText id="habilidadEspecial" class="form-control"
+                        @bind-Value="nuevoPersonaje.HabilidadEspecial" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="armaFavorita" class="form-label">Arma Favorita (Opcional)</label>
+                    <InputText id="armaFavorita" class="form-control" @bind-Value="nuevoPersonaje.ArmaFavorita" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="nivelPoder" class="form-label">Nivel de Poder (1-100)</label>
+                    <InputNumber id="nivelPoder" class="form-control" @bind-Value="nuevoPersonaje.NivelPoder" min="1"
+                        max="100" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagenPersonaje" class="form-label">Imagen del Personaje (URL)</label>
+                    <InputText id="imagenPersonaje" class="form-control" @bind-Value="nuevoPersonaje.ImagenPersonaje" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar Personaje</button>
+            </EditForm>
+
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter] public int? Id { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+
+        if (Id > 0)
+        {
+            @* var personajeExistente = await DbContext.Personajes.FindAsync(Id);
+if (personajeExistente == null)
+{
+Navigation.NavigateTo("/personajes");
+}
+else
+{
+personaje = personajeExistente;
+var seriePersonaje = await DbContext.Series.FindAsync(personaje.SerieId);
+personaje.Series = seriePersonaje ?? new Series();
+} *@
+        }
+
+    }
+    private Personaje nuevoPersonaje = new Personaje();
+
+    private void Guardar()
+    {
+        // Lógica para guardar el personaje
+        Console.WriteLine("Personaje guardado");
+    }
+}

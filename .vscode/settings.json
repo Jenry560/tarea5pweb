@@ -1,0 +1,6 @@
+{
+    "dotnet.defaultSolution": "tareaPweb.sln",
+    "cSpell.enableFiletypes": [
+        "!csharp"
+    ]
+}

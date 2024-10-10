@@ -1,0 +1,24 @@
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #006bb7;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+h1:focus {
+    outline: none;
+}
+
+.validation-message {
+    color: #e50000;
+}
+
+.form-container{
+    max-width: 600px;
+    margin: 0 auto;
+}
