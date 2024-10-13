@@ -1,24 +1,73 @@
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+html,
+body {
+  font-family: "Orbitron", sans-serif;
+  background-color: black;
 }
 
-a, .btn-link {
-    color: #006bb7;
+a,
+.btn-link {
+  color: white;
 }
 
 .content {
-    padding-top: 1.1rem;
+  padding-top: 1.1rem;
+}
+.page {
+  z-index: 10;
 }
 
 h1:focus {
-    outline: none;
+  outline: none;
 }
 
 .validation-message {
-    color: #e50000;
+  color: #e50000;
 }
 
-.form-container{
-    max-width: 600px;
-    margin: 0 auto;
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+table,
+td,
+th,
+h3 {
+  color: white;
+}
+.card-header h3 {
+  color: rgba(102, 16, 242);
+}
+.bubles {
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  filter: blur(2px);
+}
+
+.bubles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
+}
+.bubles span:nth-child(even) {
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(-110vh) scale(2);
+  }
 }

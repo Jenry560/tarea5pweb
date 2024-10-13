@@ -1,52 +1,43 @@
 ﻿@page "/"
 @using System.Collections.Generic
+@using Microsoft.EntityFrameworkCore
+@using tareaPweb.Data
 @using tareaPweb.models
 
+@inject AppDbContext context
 
 
-<div class="console-container">
+
+<div class="console-container mb-2">
     <h1 class="title-videojuego">Mundo Video juego</h1>
 
-
-    @foreach (var videojuego in videojuegos)
-    {
-        var claseFila = index % 2 == 0 ? "videojuego-card videojuego-card-2" : " videojuego-card videojuego-card-1";
-        <div class="@claseFila">
-            <img src="@videojuego.ImagenPortada" alt="@videojuego.Nombre" class="portada" />
-            <div class="videojuego-info">
-                <h3>@videojuego.Nombre</h3>
-                <p><strong>Fecha de Lanzamiento:</strong> @videojuego.FechaLanzamiento.ToShortDateString()</p>
-                <p><strong>Descripción:</strong> @videojuego.Descripcion</p>
+    <div class="row">
+        @foreach (var videojuego in videojuegos)
+        {
+            var claseFila = index % 2 == 0 ? "videojuego-card videojuego-card-2" : "videojuego-card videojuego-card-1";
+            <div class="col-6">
+                <div class="@claseFila">
+                    <img src="@videojuego.ImagenPortada" alt="@videojuego.Nombre" class="portada"
+                        style="width: 200px; height: 170px; object-fit: cover;" />
+                    <div class="videojuego-info">
+                        <h3>@videojuego.Nombre</h3>
+                        <p><strong>Fecha de Lanzamiento:</strong> @videojuego.FechaLanzamiento.ToShortDateString()</p>
+                        <p><strong>Descripción:</strong> @videojuego.Descripcion</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        index++;
-    }
+            index++;
+
+        }
+    </div>
 </div>
 @code {
 
     int index = 0; // Inicializa un contador
-    private List<VideoJuegos> videojuegos = new List<VideoJuegos>
-{
-new VideoJuegos
-{
-VideoJuegoId = 1,
-Nombre = "Super Mario Odyssey",
-Desarrollador = "Nintendo",
-Genero = "Plataformas",
-FechaLanzamiento = new DateTime(2017, 10, 27),
-ImagenPortada = "https://www.nintendo.com/eu/media/images/10_share_images/portals_3/2x1_Hub_TheLegendOfZelda_ToTK.jpg",
-Descripcion = "Un juego de plataformas en 3D en el que los jugadores controlan a Mario."
-},
-new VideoJuegos
-{
-VideoJuegoId = 2,
-Nombre = "The Legend of Zelda: Breath of the Wild",
-Desarrollador = "Nintendo",
-Genero = "Aventura",
-FechaLanzamiento = new DateTime(2017, 3, 3),
-ImagenPortada = "https://www.nintendo.com/eu/media/images/10_share_images/portals_3/2x1_SuperMarioHub_image1600w.jpg",
-Descripcion = "Un juego de aventura de mundo abierto que ofrece una experiencia de exploración única."
-}
-// Agrega más videojuegos según sea necesario
-};
+    private List<VideoJuegos> videojuegos = new List<VideoJuegos>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        videojuegos = await context.Videojuegos.ToListAsync();
+    }
 }

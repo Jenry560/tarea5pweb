@@ -1,6 +1,10 @@
 @page "/videojuegos"
 @using System.ComponentModel.DataAnnotations
+@using tareaPweb.Data
 @using tareaPweb.models
+@using Microsoft.EntityFrameworkCore
+@inject AppDbContext context
+
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
 
@@ -12,6 +16,7 @@
     <thead>
         <tr>
             <th>Nombre</th>
+            <th>Imagen Portada</th>
             <th>Desarrollador</th>
             <th>Plataforma</th>
             <th>Género</th>
@@ -24,6 +29,19 @@
         {
             <tr>
                 <td>@videojuego.Nombre</td>
+                @if (!string.IsNullOrEmpty(videojuego.ImagenPortada))
+                {
+                    <td><img src="@videojuego.ImagenPortada" alt="@videojuego.Nombre" class="img-thumbnail"
+                            style="width: 70px; height: 70px;" /></td>
+                }
+                else
+                {
+                    <td>
+                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmNILEZppKJCs1LHgBaUGbbFzQJsv6b5bt-w&s"
+                            alt="@videojuego.Nombre" class="img-thumbnail" style="width: 70px; height: 70px;" /></td>
+                    </td>
+                }
+
                 <td>@videojuego.Desarrollador</td>
                 <td>@videojuego.Plataforma.Nombre</td>
                 <td>@videojuego.Genero</td>
@@ -39,16 +57,12 @@
 </table>
 @code {
     // Lista de videojuegos (puedes llenarla con datos reales)
-    private List<VideoJuegos> listaVideojuegos = new List<VideoJuegos>
-{
-new VideoJuegos { Nombre = "The Legend of Zelda", Desarrollador = "Nintendo",
-Genero = "Aventura", FechaLanzamiento = new DateTime(2017, 3, 3), ImagenPortada =
-"https://url-de-ejemplo.com/zelda.jpg", Descripcion = "Un juego de aventura épico." },
-new VideoJuegos { Nombre = "Halo Infinite", Desarrollador = "343 Industries", Genero =
-"Acción", FechaLanzamiento = new DateTime(2021, 12, 8), ImagenPortada = "https://url-de-ejemplo.com/halo.jpg",
-Descripcion = "Un juego de disparos en primera persona." }
-};
+    private List<VideoJuegos> listaVideojuegos = new List<VideoJuegos>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        listaVideojuegos = await context.Videojuegos.ToListAsync();
+    }
 
     private void AgregarVideojuego()
     {
@@ -59,18 +73,19 @@ Descripcion = "Un juego de disparos en primera persona." }
     private void EditarVideojuego(VideoJuegos videojuegosVideoJuegos)
     {
         // Navega a la página de edición con el videojuegosVideoJuegos seleccionado
-        NavigationManager.NavigateTo($"/videojuego-form/{videojuegosVideoJuegos.Nombre}");
+        NavigationManager.NavigateTo($"/videojuego-form/{videojuegosVideoJuegos.VideoJuegoId}");
     }
 
     private void VerDetalles(VideoJuegos videojuegosVideoJuegos)
     {
         // Navega a la página de detalles del videojuegosVideoJuegos
-        NavigationManager.NavigateTo($"/videojuegos-detalles/{videojuegosVideoJuegos.Nombre}");
+        NavigationManager.NavigateTo($"/videojuegos-detalles/{videojuegosVideoJuegos.VideoJuegoId}");
     }
 
     private void EliminarVideojuego(VideoJuegos videojuego)
     {
-        // Elimina el videojuego de la lista
-        listaVideojuegos.Remove(videojuego);
+        context.Videojuegos.Remove(videojuego);
+        context.SaveChanges();
+        listaVideojuegos = context.Videojuegos.ToList();
     }
 }

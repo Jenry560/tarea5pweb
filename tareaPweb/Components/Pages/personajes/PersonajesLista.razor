@@ -1,7 +1,12 @@
 @page "/personajes"
+@using Microsoft.EntityFrameworkCore
+@using tareaPweb.Components.Layout
+@using tareaPweb.Data
 @using tareaPweb.models
+@inject AppDbContext context
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
+
 
 <h3>Lista de Personajes</h3>
 
@@ -11,6 +16,7 @@
     <thead>
         <tr>
             <th>Nombre</th>
+            <th>Imagen</th>
             <th>Alias</th>
             <th>Rol</th>
             <th>Nivel de Poder</th>
@@ -22,6 +28,18 @@
         {
             <tr>
                 <td>@personaje.Nombre</td>
+                @if (!string.IsNullOrEmpty(personaje.ImagenPersonaje))
+                {
+                    <td><img src="@personaje.ImagenPersonaje" alt="@personaje.Nombre" class="img-thumbnail"
+                            style="width: 70px; height: 70px;" /></td>
+                }
+                else
+                {
+                    <td>
+                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmNILEZppKJCs1LHgBaUGbbFzQJsv6b5bt-w&s"
+                            alt="@personaje.Nombre" class="img-thumbnail" style="width: 70px; height: 70px;" /></td>
+                    </td>
+                }
                 <td>@personaje.Alias</td>
                 <td>@personaje.Rol</td>
                 <td>@personaje.NivelPoder</td>
@@ -38,13 +56,13 @@
 
 @code {
     // Lista de personajes (ejemplo de datos)
-    private List<Personaje> listaPersonajes = new List<Personaje>
-{
-new Personaje { Nombre = "Link", Alias = "", Rol = "Protagonista", HabilidadEspecial = "Maestro Espadachín",
-ArmaFavorita = "Espada Maestra", NivelPoder = 95, ImagenPersonaje = "https://url-ejemplo.com/link.jpg" },
-new Personaje { Nombre = "Ganondorf", Alias = "", Rol = "Villano", HabilidadEspecial = "Magia Oscura", ArmaFavorita =
-"Espada", NivelPoder = 98, ImagenPersonaje = "https://url-ejemplo.com/ganondorf.jpg" }
-};
+    private List<Personaje> listaPersonajes = new List<Personaje>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaPersonajes = await context.Personajes.ToListAsync();
+    }
 
     private void AgregarPersonaje()
     {
@@ -54,17 +72,20 @@ new Personaje { Nombre = "Ganondorf", Alias = "", Rol = "Villano", HabilidadEspe
     private void EditarPersonaje(Personaje personaje)
     {
         // Navegar a la página de edición
-        NavigationManager.NavigateTo($"/personaje-form/{personaje.Nombre}");
+        NavigationManager.NavigateTo($"/personaje-form/{personaje.PersonajeId}");
     }
 
     private void VerDetalles(Personaje personaje)
     {
         // Navegar a la página de detalles
-        NavigationManager.NavigateTo($"/personaje-detalles/{personaje.Nombre}");
+        NavigationManager.NavigateTo($"/personaje-detalles/{personaje.PersonajeId}");
     }
 
     private void EliminarPersonaje(Personaje personaje)
     {
-        listaPersonajes.Remove(personaje);
+        // Eliminar el personaje
+        context.Personajes.Remove(personaje);
+        context.SaveChanges();
+        listaPersonajes = context.Personajes.ToList();
     }
 }

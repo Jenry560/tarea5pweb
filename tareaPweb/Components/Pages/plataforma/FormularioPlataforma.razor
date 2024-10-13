@@ -1,6 +1,12 @@
 @page "/plataforma-form/{Id:int?}"
+@page "/plataforma-detalles/{Id:int?}"
+
+@using tareaPweb.Data
 @using tareaPweb.models
+@inject AppDbContext context
+@inject NavigationManager Navigation
 @rendermode InteractiveServer
+
 
 
 
@@ -8,7 +14,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3>Agregar Plataforma</h3>
+            <h3>@(@Id > 0 ? "Editar Plataforma" : "Agregar Plataforma")</h3>
         </div>
         <div class="card-body">
             <EditForm Model="nuevaPlataforma" OnValidSubmit="Guardar">
@@ -17,18 +23,21 @@
 
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre de la Plataforma</label>
-                    <InputText id="nombre" class="form-control" @bind-Value="nuevaPlataforma.Nombre" required />
+                    <InputText id="nombre" class="form-control" @bind-Value="nuevaPlataforma.Nombre" required
+                        disabled="@detalle" />
                 </div>
 
-                <div class="mb-3">
-                    <label for="estado" class="form-label">Estado</label>
-                    <InputCheckbox id="estado" class="form-check-input" @bind-Value="nuevaPlataforma.Estado" />
+                <div class=" mb-3">
+                    <InputCheckbox id="estado" class="form-check-input" @bind-Value="nuevaPlataforma.Estado"
+                        disabled="@detalle" />
                     <label class="form-check-label" for="estado">
                         Activada
                     </label>
                 </div>
-
-                <button type="submit" class="btn btn-primary">Guardar Plataforma</button>
+                @if (!detalle)
+                {
+                    <button type="submit" class="btn btn-primary">Guardar Plataforma</button>
+                }
             </EditForm>
         </div>
     </div>
@@ -38,6 +47,7 @@
 @code {
     [Parameter] public int? Id { get; set; }
     private Plataforma nuevaPlataforma = new Plataforma();
+    bool detalle = false;
 
 
     protected override async Task OnInitializedAsync()
@@ -45,24 +55,36 @@
 
         if (Id > 0)
         {
-            @* var personajeExistente = await DbContext.Personajes.FindAsync(Id);
-if (personajeExistente == null)
-{
-Navigation.NavigateTo("/personajes");
-}
-else
-{
-personaje = personajeExistente;
-var seriePersonaje = await DbContext.Series.FindAsync(personaje.SerieId);
-personaje.Series = seriePersonaje ?? new Series();
-} *@
+            var plataformaExistente = await context.Plataformas.FindAsync(Id);
+            if (plataformaExistente == null)
+            {
+                Navigation.NavigateTo("/plataformas");
+            }
+            else
+            {
+                nuevaPlataforma = plataformaExistente;
+                if (Navigation.Uri.Contains("/plataforma-detalles"))
+                {
+                    detalle = true;
+                }
+            }
         }
 
     }
 
-    private void Guardar()
+    private async Task Guardar()
     {
-        // Lógica para guardar la plataforma
-        Console.WriteLine("Plataforma guardada");
+        if (Id > 0)
+        {
+            context.Plataformas.Update(nuevaPlataforma);
+
+        }
+        else
+        {
+            context.Plataformas.Add(nuevaPlataforma);
+
+        }
+        await context.SaveChangesAsync();
+        Navigation.NavigateTo("/plataformas");
     }
 }

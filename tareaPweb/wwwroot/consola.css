@@ -1,78 +1,80 @@
-
 .title-videojuego {
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    font-family: "Bungee Shade", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-family: "Bungee Shade", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 20px;
 }
 .console-container {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #e0e0e0;
-    padding: 20px;
-    border: 5px solid #333;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(224, 224, 224, 0.8);
+
+  padding: 20px;
+  border: 5px solid #333;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
 }
 
 .videojuego-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    width: 250px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  margin: auto;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
-.videojuego-card-1{
-    animation: fadeIn 3s infinite;
+.videojuego-card-1 {
+  animation: fadeIn 3s infinite;
 }
-.videojuego-card-2{
-    animation: fadeInOut 3s infinite;
+.videojuego-card-2 {
+  animation: fadeInOut 3s infinite;
 }
 
 .portada {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .videojuego-info h3 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 .videojuego-info p {
-    font-size: 0.9rem;
-    margin: 5px 0;
+  font-size: 0.9rem;
+  margin: 5px 0;
 }
 
 /* Animacion a la carta del videojuego */
 
 @keyframes fadeIn {
-    0% {
-        transform: translateX(0); /* Comienza en la posición original */
-    }
-    50% {
-        transform: translateX(200px); /* Se mueve 200px a la derecha */
-    }
-    100% {
-        transform: translateX(0); /* Regresa a la posición original */
-    }
+  0% {
+    transform: translateX(0); /* Comienza en la posición original */
+  }
+  50% {
+    transform: translateX(200px); /* Se mueve 200px a la derecha */
+  }
+  100% {
+    transform: translateX(0); /* Regresa a la posición original */
+  }
 }
 @keyframes fadeInOut {
-    0% {
-        transform: translateX(0); /* Comienza en la posición original */
-    }
-    50% {
-        transform: translateX(-200px); /* Se mueve 200px a la derecha */
-    }
-    100% {
-        transform: translateX(0); /* Regresa a la posición original */
-    }
+  0% {
+    transform: translateX(0); /* Comienza en la posición original */
+  }
+  50% {
+    transform: translateX(-200px); /* Se mueve 200px a la derecha */
+  }
+  100% {
+    transform: translateX(0); /* Regresa a la posición original */
+  }
 }

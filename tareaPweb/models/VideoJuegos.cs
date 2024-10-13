@@ -17,7 +17,7 @@ namespace tareaPweb.models
         public string Genero { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El campo FechaLanzamiento es requerido.")]
-        public DateTime FechaLanzamiento { get; set; }
+        public DateTime FechaLanzamiento { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "El campo ImagenPortada es requerido.")]
         [Url(ErrorMessage = "El campo ImagenPortada debe ser una URL válida.")]
@@ -28,7 +28,7 @@ namespace tareaPweb.models
 
 
         [Required(ErrorMessage = "El campo Plataforma es requerido.")]
-        public string PlataformaId { get; set; } = string.Empty;
+        public int PlataformaId { get; set; }
         public Plataforma Plataforma { get; set; } = new Plataforma();
     }
 }

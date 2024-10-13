@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eqdODOqHn3NWYRKzwzt4GtnnNszo1GIScZqb+nwBqo8=",
+  "Hash": "BeTsm+Wy2YdowMGSbEVDAfbFcAFO4eBhTkyjcO5fFsE=",
   "Source": "tareaPweb",
   "BasePath": "_content/tareaPweb",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "tareaPweb\\wwwroot",
       "Source": "tareaPweb",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\",
       "BasePath": "_content/tareaPweb",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\bundle\\tareaPweb.styles.css",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\bundle\\tareaPweb.styles.css",
       "SourceId": "tareaPweb",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "tareaPweb.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\bundle\\tareaPweb.styles.css"
+      "OriginalItemSpec": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\bundle\\tareaPweb.styles.css"
     },
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\tareaPweb.bundle.scp.css",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\tareaPweb.bundle.scp.css",
       "SourceId": "tareaPweb",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "tareaPweb.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\tareaPweb.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\tareaPweb.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\app.css",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\app.css",
       "SourceId": "tareaPweb",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "tareaPweb",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "tareaPweb",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\consola.css",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\consola.css",
       "SourceId": "tareaPweb",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "consola.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\consola.css"
     },
     {
-      "Identity": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\favicon.png",
+      "Identity": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\favicon.png",
       "SourceId": "tareaPweb",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\WatersoftSRL\\Desktop\\pweb\\tareapweb\\tareaPweb\\wwwroot\\",
+      "ContentRoot": "D:\\Deskop\\Itla\\tarea5pweb\\tareaPweb\\wwwroot\\",
       "BasePath": "_content/tareaPweb",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

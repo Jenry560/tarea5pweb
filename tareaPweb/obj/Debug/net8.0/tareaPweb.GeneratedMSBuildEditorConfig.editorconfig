@@ -9,63 +9,67 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = tareaPweb
 build_property.RootNamespace = tareaPweb
-build_property.ProjectDir = C:\Users\WatersoftSRL\Desktop\pweb\tarea5pweb\tareaPweb\
+build_property.ProjectDir = D:\Deskop\Itla\tarea5pweb\tareaPweb\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\WatersoftSRL\Desktop\pweb\tarea5pweb\tareaPweb
+build_property.MSBuildProjectDirectory = D:\Deskop\Itla\tarea5pweb\tareaPweb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/App.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/Error.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Layout/Burbujas.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQnVyYnVqYXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/Home.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/personajes/FomularioPersonaje.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/personajes/FomularioPersonaje.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xwZXJzb25hamVzXEZvbXVsYXJpb1BlcnNvbmFqZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/personajes/PersonajesLista.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/personajes/PersonajesLista.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xwZXJzb25hamVzXFBlcnNvbmFqZXNMaXN0YS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/plataforma/FormularioPlataforma.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/plataforma/FormularioPlataforma.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xwbGF0YWZvcm1hXEZvcm11bGFyaW9QbGF0YWZvcm1hLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/plataforma/PlataformasLista.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/plataforma/PlataformasLista.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xwbGF0YWZvcm1hXFBsYXRhZm9ybWFzTGlzdGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/videoJuegos/FommularioVideoJuego.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/videoJuegos/FommularioVideoJuego.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1x2aWRlb0p1ZWdvc1xGb21tdWxhcmlvVmlkZW9KdWVnby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Pages/videoJuegos/VideoJuegoLista.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Pages/videoJuegos/VideoJuegoLista.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1x2aWRlb0p1ZWdvc1xWaWRlb0p1ZWdvTGlzdGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Routes.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/_Imports.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Layout/MainLayout.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-t100hjwijz
 
-[C:/Users/WatersoftSRL/Desktop/pweb/tarea5pweb/tareaPweb/Components/Layout/NavMenu.razor]
+[D:/Deskop/Itla/tarea5pweb/tareaPweb/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-gwqdt1ob08

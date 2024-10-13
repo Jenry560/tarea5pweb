@@ -1,6 +1,9 @@
 @page "/plataformas"
+@using tareaPweb.Data
 @using tareaPweb.models
+@using Microsoft.EntityFrameworkCore
 @inject NavigationManager NavigationManager
+@inject AppDbContext context
 @rendermode InteractiveServer
 <h3>Lista de Plataformas</h3>
 
@@ -23,9 +26,7 @@
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="estadoPlataforma" checked="@plataforma.Estado"
                             @onchange="() => ActivarDesactivarPlataforma(plataforma)">
-                        <label class="form-check-label" for="estadoPlataforma">
-                            @(plataforma.Estado ? "Activada" : "Desactivada")
-                        </label>
+
                     </div>
                 </td>
 
@@ -42,12 +43,13 @@
 
 @code {
     // Lista de plataformas (ejemplo de datos)
-    private List<Plataforma> listaPlataformas = new List<Plataforma>
-{
-new Plataforma { Nombre = "PC", Estado = true },
-new Plataforma { Nombre = "PS5", Estado = true },
-new Plataforma { Nombre = "Xbox", Estado = false }
-};
+    private List<Plataforma> listaPlataformas = new List<Plataforma>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        listaPlataformas = await context.Plataformas.ToListAsync();
+    }
 
     private void AgregarPlataforma()
     {
@@ -57,22 +59,27 @@ new Plataforma { Nombre = "Xbox", Estado = false }
     private void ActivarDesactivarPlataforma(Plataforma plataforma)
     {
         plataforma.Estado = !plataforma.Estado;
+        context.Plataformas.Update(plataforma);
+        context.SaveChanges();
+        listaPlataformas = context.Plataformas.ToList();
     }
 
     private void EditarPlataforma(Plataforma plataforma)
     {
         // Navegar a la página de edición
-        NavigationManager.NavigateTo($"/plataforma-form/{plataforma.Nombre}");
+        NavigationManager.NavigateTo($"/plataforma-form/{plataforma.PlataformaId}");
     }
 
     private void VerDetalles(Plataforma plataforma)
     {
         // Navegar a la página de detalles
-        NavigationManager.NavigateTo($"/plataforma-detalles/{plataforma.Nombre}");
+        NavigationManager.NavigateTo($"/plataforma-detalles/{plataforma.PlataformaId}");
     }
 
     private void EliminarPlataforma(Plataforma plataforma)
     {
-        listaPlataformas.Remove(plataforma);
+        context.Plataformas.Remove(plataforma);
+        context.SaveChanges();
+        listaPlataformas = context.Plataformas.ToList();
     }
 }
